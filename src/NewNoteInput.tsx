@@ -12,6 +12,7 @@ const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
   };
 
   const onAddNoteClick = () => {
+    if (note === "") return;
     addNote(note);
     setNote("");
   };
@@ -23,10 +24,10 @@ const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
         value={note}
         type="text"
         name="note"
-        placeholder="Note"
+        placeholder="My notes"
       />
       <button type="submit" onClick={onAddNoteClick}>
-        Add note
+        Add
       </button>
     </form>
   );

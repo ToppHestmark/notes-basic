@@ -15,17 +15,15 @@ function App() {
   };
 
   return (
-    <>
-      <div>
-        <NewNoteInput addNote={onAddNote} />
-      </div>
-      <hr />
+    <header className="app">
+      <h1>notes</h1>
+      <NewNoteInput addNote={onAddNote} />
       <ul>
         {notes.map((note) => (
-          <li key={note}> {note} </li>
+          <li key={note}> [ {note} ] </li>
         ))}
       </ul>
-    </>
+    </header>
   );
 }
 
