@@ -17,7 +17,7 @@ const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
   };
 
   return (
-    <>
+    <form onSubmit={(e) => e.preventDefault()}>
       <input
         onChange={updateNote}
         value={note}
@@ -25,8 +25,10 @@ const NewNoteInput: React.FC<NewNoteInputProps> = ({ addNote }) => {
         name="note"
         placeholder="Note"
       />
-      <button onClick={onAddNoteClick}>Add note</button>
-    </>
+      <button type="submit" onClick={onAddNoteClick}>
+        Add note
+      </button>
+    </form>
   );
 };
 
